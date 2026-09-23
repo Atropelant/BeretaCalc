@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    color: #ffffff;
+}
+
+body > div {
+    width: 380px;
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Campos dos números */
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.numero {
+    width: 100%;
+    height: 55px;
+
+    padding: 0 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.numero::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.numero:focus {
+    border-color: #38bdf8;
+    background: rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Remove as setinhas do input number */
+
+.numero::-webkit-inner-spin-button,
+.numero::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Operadores */
+
+.operadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    margin: 25px 0;
+}
+
+.operadores input {
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #334155;
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.operadores input:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+.operadores input:active {
+    transform: scale(0.95);
+}
+
+/* Botão de igual */
+
+#enviar {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #38bdf8;
+    color: #0f172a;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#enviar:hover {
+    background: #7dd3fc;
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
+}
+
+#enviar:active {
+    transform: scale(0.97);
+}
+
+/* Resultado */
+
+#result {
+    min-height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    color: #e2e8f0;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* Responsividade */
+
+@media (max-width: 450px) {
+
+    body {
+        padding: 20px;
+    }
+
+    body > div {
+        width: 100%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
